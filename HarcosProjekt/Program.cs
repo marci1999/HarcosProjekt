@@ -13,6 +13,9 @@ namespace HarcosProjekt
             Harcos h1 = new Harcos("Cooper", 2);
             Harcos h2 = new Harcos("Fletó", 3);
             Harcos h3 = new Harcos("Samuel", 1);
+
+            h1.Megkuzd(h2);
+            
             Console.ReadLine();
         }
     }

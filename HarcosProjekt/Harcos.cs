@@ -32,12 +32,12 @@ namespace HarcosProjekt
                 this.alapEletero = 15;
                 this.alapSebzes = 3;
             }
-            if (statuszSablon == 2)
+            else if (statuszSablon == 2)
             {
                 this.alapEletero = 12;
                 this.alapSebzes = 4;
             }
-            if (statuszSablon == 3)
+            else if (statuszSablon == 3)
             {
                 this.alapEletero = 8;
                 this.alapSebzes = 5;
@@ -57,6 +57,45 @@ namespace HarcosProjekt
         public int MaxEletero()
         {
             return alapEletero + szint * 3;
+        }
+
+        public void Megkuzd(Harcos masikHarcos)
+        {
+            if (this != masikHarcos)
+            {
+                if (this.eletero != 0 && masikHarcos.eletero != 0)
+                {
+                    masikHarcos.Eletero -= this.sebzes();
+                    if (masikHarcos.eletero > 0)
+                    {
+                        masikHarcos.Tapasztalat += 5;
+                        this.Eletero -= masikHarcos.sebzes();
+                        if (this.eletero > 0)
+                        {
+                            this.Tapasztalat += 5;
+                            Console.WriteLine("mindeniki túlélte");
+                        }
+                        else
+                        {
+                            Console.WriteLine("megöltek téged");
+                            masikHarcos.Tapasztalat += 10;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("hát halotan már nem ugrál");
+                        this.Tapasztalat += 10;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("mind a két harcosnak élnie kell");
+                }
+            }
+            else
+            {
+                Console.WriteLine("a harcos nem küzdhet magával");
+            }
         }
 
         public override string ToString()
