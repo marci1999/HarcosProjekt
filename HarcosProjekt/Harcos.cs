@@ -21,5 +21,20 @@ namespace HarcosProjekt
         public int AlapEletero { get => alapEletero; }
         public int AlapSebzes { get => alapSebzes; }
         public int Eletero { get => eletero; set => eletero = value; }
+
+        public int sebzes()
+        {
+            return alapSebzes + szint;
+        }
+        public int szintLepeshez()
+        {
+            return 10 + szint * 5;
+        }
+
+        public int MaxEletero()
+        {
+            return alapEletero + szint * 3;
+        }
+
     }
 }
