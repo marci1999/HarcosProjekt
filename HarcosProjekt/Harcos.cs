@@ -98,6 +98,24 @@ namespace HarcosProjekt
             }
         }
 
+        public void Gyogyul()
+        {
+            if (this.eletero == 0)
+            {
+                this.Eletero = MaxEletero();
+                this.Tapasztalat = 0;
+            }
+            else if (this.Eletero + 3 + this.szint <= this.MaxEletero())
+            {
+                this.Eletero += 3 + this.szint;
+            }
+            else
+            {
+                int ideiglenes = MaxEletero() - eletero;
+                this.Eletero += ideiglenes;
+            }
+        }
+
         public override string ToString()
         {
             return string.Format("{0} - EXP: {1}/{2} - HP: {3}/{4} - DMG: {5}", this.nev, this.tapasztalat, szintLepeshez(), this.eletero, MaxEletero(), sebzes());

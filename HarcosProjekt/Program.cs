@@ -15,7 +15,15 @@ namespace HarcosProjekt
             Harcos h3 = new Harcos("Samuel", 1);
 
             h1.Megkuzd(h2);
-            
+            Console.WriteLine(h1.Eletero);
+            h1.Gyogyul();
+            Console.WriteLine(h1.Eletero);
+            h1.Gyogyul();
+            Console.WriteLine(h1.Eletero);
+            h1.Gyogyul();
+            Console.WriteLine(h1.Eletero);
+
+
             Console.ReadLine();
         }
     }
