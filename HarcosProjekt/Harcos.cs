@@ -68,23 +68,43 @@ namespace HarcosProjekt
                     masikHarcos.Eletero -= this.sebzes();
                     if (masikHarcos.eletero > 0)
                     {
-                        masikHarcos.Tapasztalat += 5;
                         this.Eletero -= masikHarcos.sebzes();
+                        masikHarcos.Tapasztalat += 5;
+                        if (masikHarcos.Tapasztalat >= masikHarcos.szintLepeshez())
+                        {
+                            masikHarcos.Tapasztalat = 0;
+                            masikHarcos.szint += 1;
+                        }
                         if (this.eletero > 0)
                         {
                             this.Tapasztalat += 5;
+                            if (this.Tapasztalat >= this.szintLepeshez())
+                            {
+                                this.Tapasztalat = 0;
+                                this.szint += 1;
+                            }
                             Console.WriteLine("mindeniki túlélte");
                         }
                         else
                         {
                             Console.WriteLine("megöltek téged");
                             masikHarcos.Tapasztalat += 10;
+                            if (masikHarcos.Tapasztalat >= masikHarcos.szintLepeshez())
+                            {
+                                masikHarcos.Tapasztalat = 0;
+                                masikHarcos.szint += 1;
+                            }
                         }
                     }
                     else
                     {
                         Console.WriteLine("hát halotan már nem ugrál");
                         this.Tapasztalat += 10;
+                        if (this.Tapasztalat >= this.szintLepeshez())
+                        {
+                            this.Tapasztalat = 0;
+                            this.szint += 1;
+                        }
                     }
                 }
                 else
