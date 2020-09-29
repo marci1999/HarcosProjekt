@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace HarcosProjekt
 {
@@ -10,6 +11,15 @@ namespace HarcosProjekt
     {
         static void Main(string[] args)
         {
+            List<Harcos> harcosok = new List<Harcos>();
+
+            StreamReader sr = new StreamReader("harcosok.csv");
+            string[] sor = sr.ReadLine().Split(";");
+            while (! )
+            {
+
+            }
+
             Harcos h1 = new Harcos("Cooper", 2);
             Harcos h2 = new Harcos("Fletó", 3);
             Harcos h3 = new Harcos("Samuel", 1);
