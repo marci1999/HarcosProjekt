@@ -110,6 +110,7 @@ namespace HarcosProjekt
                                 this.szint += 1;
                             }
                             Console.WriteLine("mindeniki túlélte");
+                            
                         }
                         else
                         {

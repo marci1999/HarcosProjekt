@@ -23,16 +23,31 @@ namespace HarcosProjekt
                     sor = sr.ReadLine();
                 }
                 sr.Close();
-                foreach (var item in harcosok)
-                {
-                    Console.WriteLine(item);
-                }
             }
             catch (IOException ioEx)
             {
                 Console.WriteLine(ioEx.Message);
                 throw;
             }
+        }
+        public void kiIr()
+        {
+            int i = 1;
+            foreach (var item in harcosok)
+            {
+                Console.WriteLine(i+""+item);
+                i++;
+            }
+        }
+
+        public Harcos kiker(int i)
+        {
+            return harcosok.ElementAt(i - 1);
+        }
+
+        public int hosz()
+        {
+           return harcosok.Count();
         }
     }
 }
