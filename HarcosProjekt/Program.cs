@@ -105,10 +105,9 @@ namespace HarcosProjekt
                     {
                         veletlen = r.Next(4);
                     } while (veletlen == 0);
-                    Console.WriteLine(veletlen);
                     Harcos masik = h.kiker(Convert.ToInt32(veletlen));
                     masik.Megkuzd(harcosom);
-                    Console.WriteLine("és most miden lleenfél gyogyul");
+                    Console.WriteLine("és most miden elenfél gyogyul");
                     for (int i = 1; i < hosz+1; i++)
                     {
                         Harcos gyogyit = h.kiker(i);
