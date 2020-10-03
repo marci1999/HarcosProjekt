@@ -14,6 +14,7 @@ namespace HarcosProjekt
         int eletero;
         int alapEletero;
         int alapSebzes;
+        
 
         public string Nev1 { get => nev; set => nev = value; }
         public int Szint { get => szint; set => szint = value; }
@@ -21,6 +22,31 @@ namespace HarcosProjekt
         public int AlapEletero { get => alapEletero; }
         public int AlapSebzes { get => alapSebzes; }
         public int Eletero { get => eletero; set => eletero = value; }
+
+        public Harcos(string sor)
+        {
+            string[] adat = sor.Split(';');
+
+            this.nev = adat[0];
+            this.szint = 1;
+            this.tapasztalat = 0;
+            if (Convert.ToInt32(adat[1]) == 1)
+            {
+                this.alapEletero = 15;
+                this.alapSebzes = 3;
+            }
+            else if (Convert.ToInt32(adat[1]) == 2)
+            {
+                this.alapEletero = 12;
+                this.alapSebzes = 4;
+            }
+            else if (Convert.ToInt32(adat[1]) == 3)
+            {
+                this.alapEletero = 8;
+                this.alapSebzes = 5;
+            }
+            this.eletero = MaxEletero();
+        }
 
         public Harcos(string nev, int statuszSablon)
         {
