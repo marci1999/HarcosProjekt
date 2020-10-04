@@ -114,6 +114,7 @@ namespace HarcosProjekt
                         }
                         else
                         {
+                            this.Eletero = 0;
                             Console.WriteLine("megöltek téged");
                             masikHarcos.Tapasztalat += 10;
                             if (masikHarcos.Tapasztalat >= masikHarcos.szintLepeshez())
@@ -125,6 +126,7 @@ namespace HarcosProjekt
                     }
                     else
                     {
+                        masikHarcos.Eletero = 0;
                         Console.WriteLine("hát halotan már nem ugrál");
                         this.Tapasztalat += 10;
                         if (this.Tapasztalat >= this.szintLepeshez())
